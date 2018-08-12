@@ -98,14 +98,13 @@ class collaborative_filtering(object):
         if self.loss_ploy:
             fig=plt.figure()
             ax=fig.add_subplot(1,1,1)
-     
-        num_i=[]
-        train_loss_plot=[]
-        cv_loss_plot=[]
-        ax.plot(num_i,train_loss_plot,c='b',marker='.',linewidth=1.0,label="train_loss")
-        ax.plot(num_i,cv_loss_plot,c='r',marker='.',linewidth=1.0,label="cv_loss")
-        plt.legend()
-        plt.title('loss')        
+            num_i=[]
+            train_loss_plot=[]
+            cv_loss_plot=[]
+            ax.plot(num_i,train_loss_plot,c='b',marker='.',linewidth=1.0,label="train_loss")
+            ax.plot(num_i,cv_loss_plot,c='r',marker='.',linewidth=1.0,label="cv_loss")
+            plt.legend()
+            plt.title('loss')        
         for i in range(self.num_iteration):               
             self.items_feature=(1-self.alpha*self.regular)*self.items_feature-\
                 self.alpha*np.dot(self.diff,self.users_feature)/self.R_users_num
